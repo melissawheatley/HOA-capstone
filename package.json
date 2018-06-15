@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react-dom": "^16.4.0",
+    "bootstrap": "^4.1.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
+    "reactstrap": "^6.1.0",
     "semantic-ui-css": "^2.3.1",
     "semantic-ui-react": "^0.80.2"
   },
@@ -15,5 +18,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0",
+    "react-styleguidist": "^7.0.16"
   }
 }
