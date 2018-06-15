@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import './Header.css';
+import './Nav.css';
 import {
     Collapse,
     Navbar,
@@ -23,8 +23,7 @@ class Navigation extends Component {
 
     render(){
         return(
-            <div>
-            <Navbar expand="md" className="topNav">
+            <Navbar expand="sm" className="topNav">
               <div className="header-logo">Lenox Living</div>
               <button type="button" className="navbar-toggler" onClick={this.toggleNavbar} ><i className="fas fa-bars"></i></button>
               <Collapse isOpen={this.state.isOpen} navbar>
@@ -41,7 +40,6 @@ class Navigation extends Component {
                 </Nav>
               </Collapse>
             </Navbar>
-          </div>
         );
     }
 

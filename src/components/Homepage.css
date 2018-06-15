@@ -1,0 +1,11 @@
+.hero{
+    background-image: url('/img/Lenox-by-Rob-Harris.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 450px;
+    padding: 5rem 2rem;
+    margin: 0;
+    
+}
