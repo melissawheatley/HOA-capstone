@@ -1,0 +1,24 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "ownerID": 1,
+        "name": "Melissa Wheatley",
+        "email": "wheatleymelissa@icloud.com",
+        "password": "123456789",
+        "address": "8614 Gauphin Place",
+        "phone": "901-378-2205",
+        "image": "https://s3.amazonaws.com/uifaces/faces/twitter/elenadissi/128.jpg"
+      }
+    ],
+    "tickets": [
+      {
+        "id": 1,
+        "ownerID": 1,
+        "type": "Landscaping",
+        "location": "8614 Gauphin Place",
+        "notes": "These are some notes about the complaint",
+        "date": "June 17, 2018"
+      }
+    ]
+  }
