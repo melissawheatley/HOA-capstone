@@ -20,7 +20,7 @@ export default class Login extends React.Component{
     if (Object.keys(fieldErrors).length) return;
 
     /********* PLACE INVERSE DATA FLOW HERE ************/
-      this.props.sendData(evt.target.id, user.email, user.password);
+      this.props.sendLogin(evt.target.id, user.email, user.password);
     
       evt.preventDefault();
   };

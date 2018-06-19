@@ -6,32 +6,32 @@ import { Link } from 'react-router-dom';;
 
 
 export default class Authentication extends Component{
-    state = {
-        authed: false,
-        user: {},
-        fieldErrors: false
-      }
-      sendData = (action, email, password) =>{
-        fetch(`http://localhost:4000/users?email=${email}`)
-        .then((data)=>{
-          return data.json();
-        }).then((userArray)=>{
-          //User doesn't exist
-            if (userArray.length===0 && action==="login"){
-                this.setState({ 
-                  authed: false,
-                  fieldErrors: true,
-                  errorMessage: "No User with That Email Exists. Sign up."
-                });
-            }
+    // state = {
+    //     authed: false,
+    //     user: {},
+    //     fieldErrors: false
+    //   }
+    //   sendLogin = (action, email, password) =>{
+    //     fetch(`http://localhost:4000/users?email=${email}`)
+    //     .then((data)=>{
+    //       return data.json();
+    //     }).then((userArray)=>{
+    //       //User doesn't exist
+    //         if (userArray.length===0 && action==="login"){
+    //             this.setState({ 
+    //               authed: false,
+    //               fieldErrors: true,
+    //               errorMessage: "No User with That Email Exists. Sign up."
+    //             });
+    //         }
             // Password is incorrect
-        else if(userArray.length !== 0 && userArray[0].password !== password && action==="login"){
-            this.setState({ 
-              authed: false,
-              fieldErrors: true,
-              errorMessage: "The password you submitted is incorrect. Please try again."
-            });
-          }
+        // else if(userArray.length !== 0 && userArray[0].password !== password && action==="login"){
+        //     this.setState({ 
+        //       authed: false,
+        //       fieldErrors: true,
+        //       errorMessage: "The password you submitted is incorrect. Please try again."
+        //     });
+        //   }
           // Email already taken
           // else if(userArray.length !== 0 && action==="signup"){
           //   this.setState({ 
@@ -59,33 +59,33 @@ export default class Authentication extends Component{
           //     });
           // }
           // Login!
-          else{
-              this.setState({ 
-                  user: userArray[0],
-                  authed: true,
-              });
-          }
-      })
-    }
+    //       else{
+    //           this.setState({ 
+    //               user: userArray[0],
+    //               authed: true,
+    //           });
+    //       }
+    //   })
+    // }
     
     
       authenticated = () => {
-        if(!this.state.authed && this.state.fieldErrors){
+        if(!this.props.authed && this.props.fieldErrors){
         // If the user is not authenticated and there are field errors (wrong password or user already exists), send both the sendDeets method and the error messages as props.
           return(
-            <Login sendData={this.sendData} errorMessage={this.state.errorMessage}/>
+            <Login sendLogin={this.props.sendLogin} errorMessage={this.props.errorMessage}/>
           )
-        }else if(!this.state.authed){
+        }else if(!this.props.authed){
 
         //If the user is not authenticated, send the sendDeets method as props.
           return(
-            <Login sendData={this.sendData}/>
+            <Login sendLogin={this.props.sendLogin}/>
           )
-        }else if(this.state.authed){
+        }else if(this.props.authed){
             // If the user authenticates, they are good to go!
           return(
             <div>
-              <AuthSuccess user={this.state.user}/>
+              <AuthSuccess user={this.props.user}/>
             </div>
           )
         }
