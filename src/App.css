@@ -1,6 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Asar');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
+body { 
+  font-size: 62.5%; 
+  background-color: #F1F2EB;
+  color: #393D3F;
+  box-sizing: border-box;
+}
+
+h1{
+  font-family: 'Asar', Georgia, serif;
+  font-size: 3rem;
+  line-height: 2.7rem;
+  color: white;
+}
+
+h2{
+  font-family: 'Asar', Georgia, serif;
+  color: #618B25;
+}
+
+h3{
+  font-family: 'Asar', Georgia, serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #721817;
+}
+
+h4{
+  font-family: 'Asar', Georgia, serif;
+  color: white;
+}
+
+p{
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.row{
+  max-width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.backLink {
+  font-size: 1rem;
+  margin: 1rem;
+}
+
+.greyBG{
+  background-color: #393D3F;
+  width: 100%;
 }

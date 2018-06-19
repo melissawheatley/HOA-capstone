@@ -1,0 +1,47 @@
+@media (max-width: 576px){
+    .topNav a{
+        margin: 0 !important;   
+    }
+}
+
+.navbar {
+    background-color: #618b25;
+    font-size: 1.1rem;
+    color: white;
+    padding: .5rem;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.topNav a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    padding: .5rem 1rem;
+    margin: 0 1rem;
+}
+
+.navbar-brand{
+    font-family: 'Asar', serif;
+    text-transform: none;
+    font-size: 1.6rem;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.navbar-toggler{
+    color: white;
+    font-size: 2.1rem;
+}
+
+.footer{
+    background-color: #393d3f;
+    color: #f1f2eb;
+    padding: 2rem;
+    position:relative;
+    bottom:0;
+    width:100%;
+}
