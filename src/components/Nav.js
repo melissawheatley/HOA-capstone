@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Nav.css';
+import './NavFooter.css';
 import {
     Collapse,
     Navbar,
@@ -24,7 +24,9 @@ class Navigation extends Component {
     render(){
         return(
             <Navbar expand="sm" className="topNav">
-              <div className="header-logo">Lenox Living</div>
+              <NavLink href='/'>
+                <div className="header-logo navbar-brand">Lenox Living</div>
+              </NavLink>
               <button type="button" className="navbar-toggler" onClick={this.toggleNavbar} ><i className="fas fa-bars"></i></button>
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
@@ -35,7 +37,7 @@ class Navigation extends Component {
                     <NavLink href="#">Resources</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#">Login</NavLink>
+                    <NavLink href='/login'>Login</NavLink>
                   </NavItem> 
                 </Nav>
               </Collapse>
