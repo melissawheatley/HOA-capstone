@@ -5,15 +5,21 @@ import Navigation from './components/Nav';
 import Homepage from './components/Homepage';
 import Auth from './components/Auth';
 // import Footer from './components/Footer';
-// import pagedata from './pagedata';
+import hubPages from './components/hubPages';
+import {
+  Nav,
+  NavItem,
+  NavLink
+  } from 'reactstrap';
 // import RequestReview from './components/requests/RequestReview';
 
 class App extends Component {
   state = {
-    // hub: pagedata,
+    pages: hubPages,
     authed: false,
     user: [],
-    fieldErrors: false
+    fieldErrors: false,
+    sidebar: false
   }
   sendLogin = (action, email, password) =>{
     fetch(`http://localhost:4000/users?email=${email}`)
@@ -67,28 +73,29 @@ class App extends Component {
           this.setState({ 
               user: userArray[0],
               authed: true,
+              sidebar: true
           });
       }
   })
 }
 
   render() {
-    // const hubPages = this.state.hub.map((hubPage) => (
-    //   <Route 
-    //     key={hubPage.id}
-    //     exact path={hubPage.route} 
-    //     component={() => <hubPage.component />}/>
-    // ));
+    const hubContent = this.state.pages.map((page) => (
+      <Route 
+          key={page.id}
+          exact path={page.route} 
+          component={() => <page.component />}
+      />
+      ));
+
     return (
       <div>
             <Navigation authed={this.state.authed}/>
             <div id="main">
             <Route exact path={'/'} component={() => <Homepage />}/>
-            <Route exact path={'/login'} component={()=> <Auth authed={this.state.authed} sendLogin={this.sendLogin} user={this.state.user}/>}/>
+            <Route exact path={'/login'} component={()=> <Auth authed={this.state.authed} sendLogin={this.sendLogin} user={this.state.user} pages={this.state.pages}/>}/>
             {/* <Route exact path='/requests/:id' component={RequestReview} />  */}
-              {/* {hubPages} */}
-          
-            {/* <Footer /> */}
+                {hubContent} 
             </div>
       </div>
     )

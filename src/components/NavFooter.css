@@ -12,14 +12,32 @@
     display: flex;
     position: sticky;
     top: 0;
+    height: 5rem;
     z-index: 1000;
+}
+
+.navbar-sidenav{
+    flex-direction: column !important;
+    text-align: left !important;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    background-color:  #393D3F;
+    height: calc(100vh - 40px);
+    width: 25%;
+    padding-top: 1.5rem;
+}
+
+.navbar-sidenav a{
+    height: 60px;
+    margin: .5rem auto !important;
+    border-bottom: 1px solid #e1e1e1;
 }
 
 .topNav a{
     text-decoration: none;
     color: white;
     text-transform: uppercase;
-    text-align: center;
     padding: .5rem 1rem;
     margin: 0 1rem;
 }
@@ -45,3 +63,4 @@
     bottom:0;
     width:100%;
 }
+
