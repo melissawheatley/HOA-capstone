@@ -40,6 +40,13 @@ p{
 
 a{
   font-size: 1.2rem;
+  color: white;
+}
+
+.hub-content{
+  position: absolute;
+  left: 30%;
+  padding-top: 5rem;
 }
 
 @keyframes App-logo-spin {
@@ -62,3 +69,4 @@ a{
   background-color: #393D3F;
   width: 100%;
 }
+

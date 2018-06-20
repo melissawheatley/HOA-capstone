@@ -5,10 +5,10 @@ import {
     NavLink
     } from 'reactstrap';
 
-export default SidebarNav class extends Component{
+export default class SidebarNav extends Component{
     render(){
         return(
-            <Nav className="navbar-sidenav" id="sidebar">
+            <Nav className="navbar-sidenav greyBG" id="sidebar">
                 <NavItem>
                     <NavLink href='/maintenance'>Requests</NavLink>
                 </NavItem>
