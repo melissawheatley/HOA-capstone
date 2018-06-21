@@ -6,11 +6,6 @@ import Homepage from './components/Homepage';
 import Auth from './components/Auth';
 // import Footer from './components/Footer';
 import hubPages from './components/hubPages';
-import {
-  Nav,
-  NavItem,
-  NavLink
-  } from 'reactstrap';
 // import RequestReview from './components/requests/RequestReview';
 
 class App extends Component {
@@ -74,7 +69,9 @@ class App extends Component {
               user: userArray[0],
               authed: true,
               sidebar: true
-          });
+          })
+          const userObj = JSON.stringify(userArray[0]);
+          sessionStorage.setItem('user', userObj);
       }
   })
 }

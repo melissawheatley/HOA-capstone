@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Login.css';
 import Login from './Login';
 import Hub from './Hub';
-import { Link } from 'react-router-dom';;
 
 
 export default class Authentication extends Component{
@@ -35,9 +34,7 @@ export default class Authentication extends Component{
             
                 {this.authenticated()}
 
-                {/* <Link to={`/`} className='backLink'>
-                    Back to Home
-                </Link> */}
+              
             </div>
         );
       }

@@ -63,3 +63,13 @@
     width:100%;
 }
 
+#login{
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.navbar-sidenav a:hover{
+    text-decoration: underline;
+    color: white;
+}
+

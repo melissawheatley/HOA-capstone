@@ -1,8 +1,16 @@
 import Requests from './MaintRequests';
 import HubInfo from './HubInfo';
 import Contacts from './Contacts';
+import Hub from './Hub';
 
 const hubPages = [
+    {
+        id: 0,
+        component: Hub,
+        title: "Homeowner Dashboard",
+        route: "/dashboard",
+        description: "Initial login screen.",
+    },
     {
         id: 1,
         component: Requests,
