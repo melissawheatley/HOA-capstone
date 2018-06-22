@@ -1,0 +1,78 @@
+.card-title a{
+    color: #721817 !important;
+    font-size: 1.4rem !important;
+}
+
+.truncate{
+    position: relative;
+    overflow: hidden;
+    line-height: 1.5rem;
+    max-height: 7.8rem;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+.ellipsis::after{
+    content: '...';
+    position: absolute;
+    right: -15px;
+    bottom: 1;
+}
+
+.btn-maroon{
+    background-color: #721817;
+    color: white;
+    padding: .5rem 1rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.btn-secondary{
+    background-color: #393d3f;
+}
+
+.btn-secondary:hover{
+    background-color: #618b25;
+    color: white !important;
+}
+
+.btn-secondary a:hover{
+    color: white !important;
+    text-decoration: none;
+}
+
+.btn-blank{
+    background-color: transparent;
+    border: none;
+    size: .8rem;
+}
+
+.card-footer{
+    background-color: #d8dad3;
+    font-size: .8rem;
+}
+
+.ticketRef{
+    color: #393d3f;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+label{
+    font-size: 1rem;
+    margin: .6rem 0 .2rem .2rem;
+}
+
+.form{
+    padding-right: 25%;
+}
+
+.card{
+    flex: 1 0 15rem !important;
+    margin-top: 2rem;
+}
+
+.edit-btn{
+    min-width: 100px;
+    border: none;
+}

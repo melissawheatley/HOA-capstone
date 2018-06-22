@@ -37,7 +37,7 @@ class Navigation extends Component {
                     <NavLink href="#">Resources</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href='/login'>Login</NavLink>
+                    <NavLink id="login" href='/login'>Login</NavLink>
                   </NavItem> 
                 </Nav>
               </Collapse>

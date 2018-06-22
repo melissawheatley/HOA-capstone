@@ -38,6 +38,22 @@ p{
   line-height: 1.6rem;
 }
 
+a{
+  font-size: 1.2rem;
+  color: white;
+}
+
+.hub-content{
+  position: absolute;
+  left: 30%;
+  padding: 5rem 4rem 0 0;
+}
+
+.dark-link{
+  text-decoration: underline !important;
+  color: #618B25 !important;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -51,10 +67,11 @@ p{
 
 .backLink {
   font-size: 1rem;
-  margin: 1rem;
+  padding: 3rem 0;
 }
 
 .greyBG{
   background-color: #393D3F;
   width: 100%;
 }
+

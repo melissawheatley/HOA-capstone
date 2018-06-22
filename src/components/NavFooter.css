@@ -12,14 +12,31 @@
     display: flex;
     position: sticky;
     top: 0;
+    height: 5rem;
     z-index: 1000;
+}
+
+.navbar-sidenav{
+    flex-direction: column !important;
+    text-align: left !important;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    height: 100%;
+    width: 25%;
+    padding-top: 1.5rem;
+}
+
+.navbar-sidenav a{
+    height: 60px;
+    margin: .5rem auto !important;
+    border-bottom: 1px solid #e1e1e150;
 }
 
 .topNav a{
     text-decoration: none;
     color: white;
     text-transform: uppercase;
-    text-align: center;
     padding: .5rem 1rem;
     margin: 0 1rem;
 }
@@ -45,3 +62,14 @@
     bottom:0;
     width:100%;
 }
+
+#login{
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.navbar-sidenav a:hover{
+    text-decoration: underline;
+    color: white;
+}
+
