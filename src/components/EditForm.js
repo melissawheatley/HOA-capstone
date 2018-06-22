@@ -6,8 +6,8 @@ import './tickets.css';
 export default class EditForm extends Component{
     state = {
         fields: {
-            type: this.props.ticket.type || '',
-            subject: '',
+            type: this.props.ticket.type || [],
+            subject: this.props.ticket.subject || '',
             message: this.props.ticket.message  || '',
             resolved: this.props.ticket.resolved  || ''
         }
@@ -67,11 +67,11 @@ export default class EditForm extends Component{
                 </FormGroup>
 
                 <FormGroup>
-                    <Label for="type">Select Request Type(s)</Label>
+                    <Label for="requestType">Select Request Type(s)</Label>
                     <Input 
                         type="select" 
-                        name="type" 
-                        id="type" 
+                        name="requestType" 
+                        id="requestType" 
                         value={[this.state.fields.type]}
                         onChange={this.onInputChange}
                     multiple>

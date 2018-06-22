@@ -15,7 +15,7 @@ export default class Tickets extends Component{
         const storedUser = sessionStorage.getItem('user');
         if(storedUser){
             const storedUserObj = JSON.parse(storedUser);
-            console.log('storedUserobj', storedUserObj);
+            // console.log('storedUserobj', storedUserObj);
             this.loadTickets(storedUserObj.id);
         }else{
             this.loadTickets(this.props.user.id)
@@ -27,7 +27,7 @@ export default class Tickets extends Component{
         .then((data)=>{
             return data.json();
         }).then((userRequests)=>{
-            console.log('tickets from loadTickets before setting state', userRequests);
+            // console.log('tickets from loadTickets before setting state', userRequests);
             this.setState({
                 tickets: userRequests,
                 loaded: true
@@ -66,18 +66,6 @@ export default class Tickets extends Component{
         })
     }
 
-    deleteRequest = (id) => {
-       return fetch(`http://localhost:4000/requests/${id}`, {
-           method: 'DELETE',
-           headers: {
-               'Content-Type': 'application/json'
-           }
-       }).then((response)=>{
-           const storedUser = sessionStorage.getItem('user');
-           const storedUserObj = JSON.parse(storedUser);
-           this.loadTickets(storedUserObj.id)
-       })
-    }
 
     openForm = () => {
         if(this.state.addRequest){
@@ -108,7 +96,7 @@ export default class Tickets extends Component{
                 <div>
                     {this.openForm()}
                     <h2>Open Tickets</h2>
-                    <TicketList loaded={this.state.loaded} tickets={this.state.tickets} loadTickets={this.loadTickets} />
+                    <TicketList loaded={this.state.loaded} tickets={this.state.tickets} />
                 </div>
         )
     }
@@ -151,11 +139,11 @@ class CardTemplate extends Component{
             <Card>
                 <CardBody>
                     <CardTitle>
-                        <Link to={`/requests/${this.props.id}`}> {this.props.subject} <span className="ticketRef">(Ticket {this.props.id})
+                        <Link to={`/requests/${this.props.id}`} deleteRequest={this.deleteRequest}> {this.props.subject} <span className="ticketRef">(Ticket {this.props.id})
                         </span> </Link>
                     </CardTitle>
                     <CardText className="truncate ellipsis">{this.props.message}</CardText>
-                    <Button><Link to={`/requests/${this.props.id}`}>Details</Link></Button>
+                    <Button><Link to={`/requests/${this.props.id}`} deleteRequest={this.deleteRequest}>Details</Link></Button>
                 </CardBody>
                 <CardFooter>{this.props.type}</CardFooter>
             </Card>

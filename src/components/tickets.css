@@ -68,6 +68,11 @@ label{
 }
 
 .card{
-    flex: 1 0 15rem;
+    flex: 1 0 15rem !important;
     margin-top: 2rem;
+}
+
+.edit-btn{
+    min-width: 100px;
+    border: none;
 }

@@ -80,11 +80,11 @@ export default class AddForm extends Component{
                 </FormGroup>
 
                 <FormGroup>
-                    <Label for="type">Select Request Type(s)</Label>
+                    <Label for="requestType">Select Request Type(s)</Label>
                     <Input 
                         type="select" 
-                        name="type" 
-                        id="type" 
+                        name="requestType" 
+                        id="requestType" 
                         onChange={this.onInputChange}
                     multiple>
                             <option>Maintenance</option>

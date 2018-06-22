@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './tickets.css';
 import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import EditForm from './EditForm';
 
 
@@ -27,12 +28,22 @@ export default class SingleTicket extends Component{
         })
     }
 
-    editContact = () => {
+    editRequest = () => {
         this.setState({
             edit: true
         })
     }
 
+    openEditForm = () =>{
+        if(this.state.edit){
+            return(
+                <div>
+                    <hr />
+                    <EditForm title='Edit This Request' saveUpdate={this.saveUpdate} cancelUpdate={this.cancelUpdate} deleteRequest={this.deleteRequest} ticket={this.state.request} user={this.props.user} />
+                </div>
+            )
+        }
+    }
 
     saveUpdate = (userObject) =>{
         return fetch(`http://localhost:4000/requests/${this.props.id}`, {
@@ -57,25 +68,42 @@ export default class SingleTicket extends Component{
         })
     }
 
-    openEditForm = () =>{
-        if(this.state.edit){
-            return(
-                <div>
-                    <hr />
-                    <EditForm title='Edit This Request' saveUpdate={this.saveUpdate} cancelUpdate={this.cancelUpdate} deleteRequest={this.props.deleteRequest} ticket={this.state.request} user={this.props.user} />
-                </div>
-            )
-        }
+    loadTickets = (id) => {
+        fetch(`http://localhost:4000/requests?ownerID=${id}`)
+        .then((data)=>{
+            return data.json();
+        }).then((userRequests)=>{
+            // console.log('tickets from loadTickets before setting state', userRequests);
+            this.setState({
+                tickets: userRequests,
+                loaded: true
+            })
+        })
     }
+
+    deleteRequest = () => {
+        console.log('delete clicked');
+        return fetch(`http://localhost:4000/requests/${this.props.id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then((response)=>{
+            const storedUser = sessionStorage.getItem('user');
+            const storedUserObj = JSON.parse(storedUser);
+            this.loadTickets(storedUserObj.id)
+        })
+     }
 
 
     render(){
         return(
-            
             <div className="singleRequest">
                 <h2>{this.state.request.subject}</h2> 
                 <p>{this.state.request.message}</p>
-                <Button onClick={this.editContact}>Edit</Button>
+                <Button onClick={this.editRequest} className="edit-btn btn-maroon">Edit</Button> <Button onClick={this.deleteRequest} className="btn-blank dark-link"><a href='/maintenance'>Delete</a></Button>
+                <hr />
+                <a href='/maintenance' className="dark-link ml-2">Go Back to List »</a>
                     {this.openEditForm()}
             </div>
             
