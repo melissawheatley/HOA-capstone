@@ -27,11 +27,12 @@
       "ownerID": 1,
       "name": "Melissa Wheatley",
       "email": "wheatleymelissa@icloud.com",
-      "subject": "Powerwashing needed",
+      "subject": "Powerwashing needed NOW",
       "type": "building maintenance",
       "message": "Nullam eu finibus sapien. Vivamus diam dolor, pellentesque quis eros ac, pulvinar pharetra dolor. Maecenas rhoncus tincidunt risus a vestibulum. Curabitur vestibulum mauris ultrices tellus accumsan pretium. Mauris in quam nec felis vestibulum lobortis eget sed mauris. Suspendisse massa arcu, cursus mattis posuere a, tincidunt non nulla. ",
       "phone": "615-739-3124",
-      "submitDate": "05-20-2018"
+      "submitDate": "05-20-2018",
+      "resolved": ""
     }
   ]
 }

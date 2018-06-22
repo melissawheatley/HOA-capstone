@@ -72,7 +72,7 @@ export default class AddForm extends Component{
                 <FormGroup>
                     <Label for="message">Tell us more about your situation</Label>
                     <Input 
-                        fluid placeholder='ex. The lighting on my fence is no longer working.' 
+                        placeholder='ex. The lighting on my fence is no longer working.' 
                         name="message"
                         type='textarea'
                         onChange={this.onInputChange}
@@ -101,7 +101,7 @@ export default class AddForm extends Component{
                     <Input type="text" 
                         name="name" 
                         id="name" 
-                        fluid placeholder='FirstName LastName'
+                        placeholder='FirstName LastName'
                         value={this.props.user.name}
                         onChange={this.onInputChange} />
                 </FormGroup>
@@ -111,7 +111,7 @@ export default class AddForm extends Component{
                     <Input type="email" 
                         name="email" 
                         id="email" 
-                        fluid placeholder='example@email.com'
+                        placeholder='example@email.com'
                         value={this.props.user.email} 
                         onChange={this.onInputChange}/>
                 </FormGroup>
@@ -121,7 +121,7 @@ export default class AddForm extends Component{
                     <Input type="text" 
                         name="phone" 
                         id="phone" 
-                        fluid placeholder='615-867-5309'
+                        placeholder='615-867-5309'
                         value={this.props.user.phone}
                         onChange={this.onInputChange} />
                 </FormGroup>

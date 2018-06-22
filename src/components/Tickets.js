@@ -139,11 +139,11 @@ class CardTemplate extends Component{
             <Card>
                 <CardBody>
                     <CardTitle>
-                        <Link to={`/requests/${this.props.id}`} deleteRequest={this.deleteRequest}> {this.props.subject} <span className="ticketRef">(Ticket {this.props.id})
+                        <Link to={`/requests/${this.props.id}`} > {this.props.subject} <span className="ticketRef">(Ticket {this.props.id})
                         </span> </Link>
                     </CardTitle>
                     <CardText className="truncate ellipsis">{this.props.message}</CardText>
-                    <Button><Link to={`/requests/${this.props.id}`} deleteRequest={this.deleteRequest}>Details</Link></Button>
+                    <Button><Link to={`/requests/${this.props.id}`} >Details</Link></Button>
                 </CardBody>
                 <CardFooter>{this.props.type}</CardFooter>
             </Card>
