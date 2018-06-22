@@ -80,11 +80,11 @@ export default class Tickets extends Component{
     }
 
     openForm = () => {
-        if(this.state.addContact){
+        if(this.state.addRequest){
             return(
                 <div>
                     <hr />
-                        <AddForm title="Add Request" saveRequest={this.saveRequest} cancelRequestAdd={this.cancelRequestAdd} />
+                        <AddForm title="Add New Request" saveRequest={this.saveRequest} cancelRequestAdd={this.cancelRequestAdd} user={this.props.user} />
                     <hr />
                 </div>
             )
@@ -108,7 +108,7 @@ export default class Tickets extends Component{
                 <div>
                     {this.openForm()}
                     <h2>Open Tickets</h2>
-                    <TicketList loaded={this.state.loaded} tickets={this.state.tickets} deleteRequest={this.deleteRequest} />
+                    <TicketList loaded={this.state.loaded} tickets={this.state.tickets} loadTickets={this.loadTickets} />
                 </div>
         )
     }
@@ -127,7 +127,6 @@ class TicketList extends Component{
                 date={ticket.originDate}
                 resolved={ticket.resolved}
                 subject={ticket.subject}
-                deleteRequest={this.props.deleteRequest}
             />
         ));
         return(

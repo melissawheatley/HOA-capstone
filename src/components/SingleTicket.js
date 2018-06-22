@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './tickets.css';
-import { Link } from 'react-router-dom';
-// import EditForm from './EditForm';
-import SidebarNav from './SidebarNav';
+import { Button } from 'reactstrap';
+import EditForm from './EditForm';
+
 
 export default class SingleTicket extends Component{
 
     state = {
-        contact: {},
         edit: false,
         request: {}
     }
@@ -24,7 +23,7 @@ export default class SingleTicket extends Component{
             this.setState({
                 request: ticketArray[0]
             })
-            console.log('ticket from getTicketDB', this.state.request);
+            // console.log('ticket from getTicketDB', this.state.request);
         })
     }
 
@@ -46,7 +45,7 @@ export default class SingleTicket extends Component{
             return data.json();
         }).then((result)=>{
             this.setState({
-                ticket: result, //you want to set this state so that the update will re-render on it's own without refresh.
+                request: result, //you want to set this state so that the update will re-render on it's own without refresh.
                 edit: false
             })
         })
@@ -63,21 +62,20 @@ export default class SingleTicket extends Component{
             return(
                 <div>
                     <hr />
-                    <p>Edit form clicked</p>
-                    {/* <EditForm title='Edit This Contact' person={this.state.contact} saveUpdate={this.saveUpdate} cancelUpdate={this.cancelUpdate} deleteRequest={this.props.deleteRequest} /> */}
+                    <EditForm title='Edit This Request' saveUpdate={this.saveUpdate} cancelUpdate={this.cancelUpdate} deleteRequest={this.props.deleteRequest} ticket={this.state.request} user={this.props.user} />
                 </div>
             )
         }
     }
 
 
-
     render(){
         return(
             
             <div className="singleRequest">
-                    <h2>{this.state.request.subject}</h2> 
-                    <p>{this.state.request.message}</p>
+                <h2>{this.state.request.subject}</h2> 
+                <p>{this.state.request.message}</p>
+                <Button onClick={this.editContact}>Edit</Button>
                     {this.openEditForm()}
             </div>
             

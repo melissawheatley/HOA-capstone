@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SidebarNav from './SidebarNav';
 import Tickets from './Tickets';
-import { Link } from 'react-router-dom';
 
 
 export default class Requests extends Component {
