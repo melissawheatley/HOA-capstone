@@ -4,9 +4,8 @@ import { Route } from 'react-router-dom';
 import Navigation from './components/Nav';
 import Homepage from './components/Homepage';
 import Auth from './components/Auth';
-// import Footer from './components/Footer';
 import hubPages from './components/hubPages';
-// import RequestReview from './components/requests/RequestReview';
+import GetRequest from './components/GetTicket';
 
 class App extends Component {
   state = {
@@ -91,7 +90,7 @@ class App extends Component {
             <div id="main">
             <Route exact path={'/'} component={() => <Homepage />}/>
             <Route exact path={'/login'} component={()=> <Auth authed={this.state.authed} sendLogin={this.sendLogin} user={this.state.user} pages={this.state.pages}/>}/>
-            {/* <Route exact path='/requests/:id' component={RequestReview} />  */}
+            <Route exact path='/requests/:id' component={GetRequest}/> 
                 {hubContent} 
             </div>
       </div>

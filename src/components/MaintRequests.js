@@ -44,12 +44,8 @@ export default class Requests extends Component {
          <div>
             <SidebarNav />
             <div className="hub-content">
-            <h2>Your Maintenance Requests App</h2>
+            <h2>Maintenance Requests</h2>
                 {this.checkAuthed()}
-
-            <Link to={`/dashboard`} className='backLink dark-link'>
-                Back to your homeowner dashboard »
-            </Link>
             </div>
          </div>
      );
